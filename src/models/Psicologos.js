@@ -7,18 +7,23 @@ const Psicologos = db.define(
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
+            allowNull: false,
         },
         nome:{
             type: DataTypes.STRING,
+            allowNull: false,
         },
         apresentacao:{
             type: DataTypes.STRING,
+            allowNull: false,
         },
         email:{
             type: DataTypes.STRING,
+            allowNull: false,
         },
         senha: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            allowNull: false,
         },
 
     },
