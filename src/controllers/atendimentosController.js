@@ -1,4 +1,5 @@
 const { Atendimentos, Pacientes, Psicologos } = require('../models');
+const tokenHeader = require('express-jwt');
 
 const atendimentosController = {
     async listarAtendimentos(req, res){
@@ -23,21 +24,9 @@ const atendimentosController = {
         },
     async cadastrarAtendimento (req, res){
         const{ paciente_id, data_atendimento, observacao } = req.body;
-        const tokenHeader = req.headers.authorization;
-        var base64Url = tokenHeader.split('.')[1];
-        console.log(base64Url);
-        var decodedValue = JSON.parse(base64Url.decod);
-        console.log(decodedValue);        
-        const psic_id = req.user;
-        console.log(psic_id);
-        const psicologo_id = await psic_id.findOne({
-            where:{
-                id,
-            }
-        })
-        console.log(psicologo_id);
+        const tokenHeader = req.auth;
         const novoAtendimento = await Atendimentos.create({
-            psicologo_id,
+            psicologo_id:tokenHeader,
             paciente_id,
             data_atendimento,
             observacao
