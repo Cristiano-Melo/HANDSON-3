@@ -7,19 +7,15 @@ const Pacientes = db.define(
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
-            allowNull: false,
         },
         nome:{
             type: DataTypes.STRING,
-            allowNull: false,
         },
         email:{
             type: DataTypes.STRING,
-            allowNull: false,
         },
         data_nascimento: {
             type: DataTypes.DATE,
-            allowNull: false,
         },
 
     },
