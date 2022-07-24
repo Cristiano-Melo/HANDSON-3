@@ -23,12 +23,19 @@ const atendimentosController = {
         },
     async cadastrarAtendimento (req, res){
         const{ paciente_id, data_atendimento, observacao } = req.body;
-        const{ tokenPsicologo } = req.headers;
-        const psicologo_id = await tokenPsicologo.findOne({
+        const tokenHeader = req.headers.authorization;
+        var base64Url = tokenHeader.split('.')[1];
+        console.log(base64Url);
+        var decodedValue = JSON.parse(base64Url.decod);
+        console.log(decodedValue);        
+        const psic_id = req.user;
+        console.log(psic_id);
+        const psicologo_id = await psic_id.findOne({
             where:{
-                id:id,
+                id,
             }
         })
+        console.log(psicologo_id);
         const novoAtendimento = await Atendimentos.create({
             psicologo_id,
             paciente_id,
