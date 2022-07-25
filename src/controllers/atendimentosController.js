@@ -23,11 +23,11 @@ const atendimentosController = {
                 {return res.status(404).json('ID não encontrado');}
         },
     async cadastrarAtendimento (req, res){
-        const{ paciente_id, data_atendimento, observacao } = req.body;
-        const tokenHeader = req.auth;
+        const{ pacientes_id, data_atendimento, observacao } = req.body;
+        const tokenHeader = req.auth.id;
         const novoAtendimento = await Atendimentos.create({
-            psicologo_id:tokenHeader,
-            paciente_id,
+            psicologos_id:tokenHeader,
+            pacientes_id,
             data_atendimento,
             observacao
         });
