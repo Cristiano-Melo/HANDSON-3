@@ -11,9 +11,9 @@ const AuthController = {
         });
     if (!psicologo){
         return res.status(401).json('Email ou senha inválido, verifique e tente novamente!')
-    }
+    };
     if (!bcrypt.compareSync(senha, psicologo.senha)){
-        return res.status(401).json('Email ou senha inválido, verifique e tente novamente!')}
+        return res.status(401).json('Email ou senha inválido, verifique e tente novamente!')};
     
     const token = jwt.sign({
         id: psicologo.id,
