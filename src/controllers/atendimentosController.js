@@ -6,36 +6,28 @@ const atendimentosController = {
             include: Pacientes, 
             include: Psicologos
         });
-        res.status(200).json(listaDeAtendimentos);
+        return res.status(200).json(listaDeAtendimentos);
     },
     async AtendimentoByID(req, res){
-        try{
             const { id } = req.params;
-            const AtendimentoByID = await Atendimentos.findOne({
-                where:{
-                    id:id,
-                }
-            });
-            res.status(200).json(AtendimentoByID);
+            const AtendimentoByID = await Atendimentos.findOne({where:{ id } });
+            if(!AtendimentoByID){
+                return res.status(404).json('ID não encontrado').end();
             }
-            catch(error)
-                {return res.status(404).json('ID não encontrado');}
+            else{
+                return res.status(200).json(AtendimentoByID);};
+            
         },
     async cadastrarAtendimento (req, res){
-        const{ paciente_id, data_atendimento, observacao } = req.body;
-        const{ tokenPsicologo } = req.headers;
-        const psicologo_id = await tokenPsicologo.findOne({
-            where:{
-                id:id,
-            }
-        })
+        const{ pacientes_id, data_atendimento, observacao } = req.body;
+        const tokenHeader = req.auth.id;
         const novoAtendimento = await Atendimentos.create({
-            psicologo_id,
-            paciente_id,
+            psicologos_id:tokenHeader,
+            pacientes_id,
             data_atendimento,
             observacao
         });
-        res.status(201).json(novoAtendimento);
+        return res.status(201).json(novoAtendimento);
     },
     };
 
