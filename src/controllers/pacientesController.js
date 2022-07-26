@@ -10,40 +10,27 @@ const pacientesController = {
         const listaDePaciente = await Pacientes.findOne({
             where:{ id, }   
         });
-        if(!listaDePaciente){ return res.status(404).json('Id não encontrado!');}
-        else { return res.status(200).json(listaDePaciente); };
+        return res.status(200).json(listaDePaciente);
     },
     async cadastrarPacientes(req, res){
         const{ nome, email, data_nascimento } = req.body;
-        const validaEmailPaciente = await Pacientes.findOne({where:{email}});
-        if (validaEmailPaciente == email){ 
-            res.json('email já cadastrado, favor inserir outro!');
-        }
-        else {
-            const novoPaciente = await Pacientes.create({
+        const novoPaciente = await Pacientes.create({
                 nome,
                 email,
                 data_nascimento,            
             });
-            return res.status(201).json(novoPaciente);
-        }
+        return res.status(201).json(novoPaciente);
     },
     async atualizarPacientes (req, res){
         const { id } = req.params;
         const { nome, email, data_nascimento } = req.body;
-        const validaEmailPaciente = await Pacientes.findOne({where:{email}});
-        if (validaEmailPaciente == email){ 
-            res.json('email já cadastrado, favor inserir outro!');
-        }
-        else {
-            const pacienteEncontrado = await Pacientes.findOne({where: {id}});
+        const pacienteEncontrado = await Pacientes.findOne({where: {id}});
             pacienteEncontrado.update({ 
                 nome,
                 email,
                 data_nascimento,
             });
-            return res.status(200).json(pacienteEncontrado);            
-        }
+            return res.status(200).json(pacienteEncontrado);
     },
    
     async deletarPacientes (req, res){
