@@ -33,7 +33,7 @@ Explicar como executar os testes para este sistema através do Imsomnia.
 
 ## ✒️ Autores
 
-*⌨️ com ❤️ por **Cristiano Melo** - *Node.JS - Documentação* - [Cristiano Melo](https://github.com/Cristiano-Melo)
+*⌨️ com ❤️ por **Cristiano Melo** - *Node.JS - Documentação* - [Cristiano Melo](https://github.com/Cristiano-Melo)<br>
 *⌨️ com ❤️ por **Amanda Hammes** - *Node.JS - Documentação* - [Amanda Hammes](https://github.com/amandahammes/)
 
 ## 🎁 Expressões de gratidão
