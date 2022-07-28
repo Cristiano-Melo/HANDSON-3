@@ -3,8 +3,6 @@ const { Atendimentos, Pacientes, Psicologos } = require('../models');
 const atendimentosController = {
     async listarAtendimentos(req, res){
         const listaDeAtendimentos = await Atendimentos.findAll({
-            include: Pacientes, 
-            include: Psicologos
         });
         return res.status(200).json(listaDeAtendimentos);
     },
