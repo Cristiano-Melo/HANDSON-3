@@ -11,6 +11,7 @@ const ValidaAtendimento = require('../middlewares/ValidaAtendimento')
 const authLoginValidation = require('../validations/auth/login');
 const auth = require('../middlewares/auth');
 const { ValidaEmailId } = require('../middlewares/ValidaPaciente');
+const dashboardValues = require('../controllers/dashbord');
 const routes = express.Router();
 
 routes.post('/login', authLoginValidation, authController.login);
