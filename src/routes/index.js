@@ -11,6 +11,7 @@ const ValidaAtendimento = require('../middlewares/ValidaAtendimento')
 const authLoginValidation = require('../validations/auth/login');
 const auth = require('../middlewares/auth');
 const { ValidaEmailId } = require('../middlewares/ValidaPaciente');
+const dashboardValues = require('../controllers/dashbord');
 const routes = express.Router();
 
 routes.post('/login', authLoginValidation, authController.login);
@@ -31,6 +32,10 @@ routes.get('/atendimentos', atendimentosController.listarAtendimentos);
 routes.get('/atendimentos/:id',ValidaAtendimento.ValidaID, atendimentosController.AtendimentoByID);
 routes.post('/atendimentos', auth, atendimentosController.cadastrarAtendimento);
 
+routes.get('/dashboard/totalpacientes', dashboardValues.totalPacientes);
+routes.get('/dashboard/totalpsicologos', dashboardValues.totalPsicologos);
+routes.get('/dashboard/totalatendimentos', dashboardValues.totalAtendimentos);
+routes.get('/dashboard/media', dashboardValues.mediaTotal);
 
 
 module.exports = routes;
