@@ -39,6 +39,6 @@ Explicar como executar os testes para este sistema através do Imsomnia.
 ## 🎁 Expressões de gratidão
 
 * Projeto realizado após muito esforço e dedicação, Espero que gostem! 📢
-* Com o projeto comcluído. Podemos Tomar uma 🍺 não é mesmo **Amanda Hammes**?
+* Com o projeto concluído. Podemos Tomar uma 🍺 não é mesmo **Amanda Hammes**?
 * Obrigado [Daniel Obara](https://github.com/DanielObara) Pelos ensinamentos, macetes e principalmente pela paciência em nos ensinar 🤓.
 
