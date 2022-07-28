@@ -31,6 +31,10 @@ routes.get('/atendimentos', atendimentosController.listarAtendimentos);
 routes.get('/atendimentos/:id',ValidaAtendimento.ValidaID, atendimentosController.AtendimentoByID);
 routes.post('/atendimentos', auth, atendimentosController.cadastrarAtendimento);
 
+routes.get('/dashboard/totalpacientes', dashboardValues.totalPacientes);
+routes.get('/dashboard/totalpsicologos', dashboardValues.totalPsicologos);
+routes.get('/dashboard/totalatendimentos', dashboardValues.totalAtendimentos);
+routes.get('/dashboard/media', dashboardValues.mediaTotal);
 
 
 module.exports = routes;
