@@ -8,9 +8,10 @@ psicólogos, pacientes e prontuários.
 ## 🚀 Começando
 
 Este projeto necessita de alguns passos para ser testado corretamente, conforme descrito abaixo:
-    1. Banco de Dados Mysql instalado e configurado no ambiente a ser testado.
-    2. Uma framework client para testes de API. Recomendado ( Insomnia ), para interação com a API.
-    3. Um editor de texto, para alteração do arquivo de conexão com o Banco de Dados.
+
+    1. Banco de Dados Mysql instalado e configurado no ambiente a ser testado.<br>
+    2. Uma framework client para testes de API. Recomendado ( Insomnia ), para interação com a API.<br>
+    3. Um editor de texto, para alteração do arquivo de conexão com o Banco de Dados.<br>
 
 ### 📋 Pré-requisitos
 
