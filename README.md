@@ -26,11 +26,17 @@ De que coisas você precisa para instalar o software e como instalá-lo?
     - Necessário alterar credenciais do banco de dados ./src/database/index.js.
     - Criar banco de dados dentro do MySql com o seguinte nome: lavie (as tabelas serão criadas automaticamente).
     - Para iniciar o servidor da API via script acesse o terminal e execute o seguinte comando: npm run dev
-  
+    
+    
+## 📦 Documentação da API
+
+Para acessar a documentação da API, será necessário executar um live server através do VSCODE no arquivo /docs/index.htm.
 
 ## ⚙️ Executando os testes
 
-Explicar como executar os testes para este sistema através do Imsomnia.
+    - Atraves do botão abaixo, você será redirecionado para o insomnia para realização dos testes, com todas as rotas já pré-criados:
+ 
+ <p align = 'center'><a href="https://insomnia.rest/run/?label=La%20Vie&uri=https%3A%2F%2Fraw.githubusercontent.com%2FCristiano-Melo%2FHANDSON-3%2Fmaster%2Fdocs%2Finsomnia.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a></p>
 
 ## ✒️ Autores
 
