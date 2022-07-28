@@ -26,7 +26,11 @@ De que coisas você precisa para instalar o software e como instalá-lo?
     - Necessário alterar credenciais do banco de dados ./src/database/index.js.
     - Criar banco de dados dentro do MySql com o seguinte nome: lavie (as tabelas serão criadas automaticamente).
     - Para iniciar o servidor da API via script acesse o terminal e execute o seguinte comando: npm run dev
-  
+    
+    
+## 📦 Documentação da API
+
+Para acessar a documentação da API, será necessário executar um live server através do VSCODE no arquivo /docs/index.htm.
 
 ## ⚙️ Executando os testes
 
