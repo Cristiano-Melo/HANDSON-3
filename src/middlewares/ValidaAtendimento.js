@@ -6,7 +6,7 @@ const validaAtendimento = {
         const validaIDAtendimento = await Atendimentos.findOne({where:{id}});
         if (!validaIDAtendimento){
             return res.status(404).json('ID não encontado!')
-        }
+        };
     next();
     }
 };
