@@ -4,7 +4,7 @@ const { Pacientes } = require('../models');
             const{ nome, email, data_nascimento } = req.body;
             const validaEmailPaciente = await Pacientes.findOne({where:{email:email}});
             if (validaEmailPaciente?.email == email){ 
-            return res.json('email já cadastrado, favor inserir outro!');
+            return res.status(404).json('email já cadastrado, favor inserir outro!');
             };
             next();      
         },
@@ -13,7 +13,7 @@ const { Pacientes } = require('../models');
             const { id } = req.params;
             const ValidaEmailID = await Pacientes.findOne({ where: {email}});
             if ( (ValidaEmailID?.email == email)&&( ValidaEmailID.id != id)){
-                return res.json('email já cadastrado, favor inserir outro!');    
+                return res.status(404).json('email já cadastrado, favor inserir outro!');    
             };
             next();
         },
