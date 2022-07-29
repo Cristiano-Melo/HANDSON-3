@@ -1,14 +1,14 @@
 const { Atendimentos } = require('../models');
     
-const ValidaAtendimento = {
-    async ValidaID( req, res, next ){
+const validaAtendimento = {
+    async validaID( req, res, next ){
         const { id } = req.params;
-        const ValidaIDAtendimento = await Atendimentos.findOne({where:{id}});
-        if (!ValidaIDAtendimento){
+        const validaIDAtendimento = await Atendimentos.findOne({where:{id}});
+        if (!validaIDAtendimento){
             return res.status(404).json('ID não encontado!')
         }
     next();
     }
 };
 
-module.exports = ValidaAtendimento;
+module.exports = validaAtendimento;

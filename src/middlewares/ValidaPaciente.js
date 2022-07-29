@@ -1,29 +1,29 @@
 const { Pacientes } = require('../models');
-    const ValidaPaciente = {
-        async ValidaEmail( req, res,next ){
-            const{ nome, email, data_nascimento } = req.body;
+    const validaPaciente = {
+        async validaEmail( req, res,next ){
+            const{ email } = req.body;
             const validaEmailPaciente = await Pacientes.findOne({where:{email:email}});
             if (validaEmailPaciente?.email == email){ 
-            return res.json('email já cadastrado, favor inserir outro!');
+            return res.json('email já cadastrado, favor inserir outro!');       //retornar status
             };
             next();      
         },
-        async ValidaEmailId( req, res, next ){
+        async validaEmailId( req, res, next ){
             const { email } = req.body;
             const { id } = req.params;
-            const ValidaEmailID = await Pacientes.findOne({ where: {email}});
-            if ( (ValidaEmailID?.email == email)&&( ValidaEmailID.id != id)){
-                return res.json('email já cadastrado, favor inserir outro!');    
+            const validaEmailID = await Pacientes.findOne({ where: {email}});
+            if ( (validaEmailID?.email == email)&&( validaEmailID.id != id)){
+                return res.json('email já cadastrado, favor inserir outro!');    //retornar status
             };
             next();
         },
-        async ValidaID( req, res, next ){
+        async validaID( req, res, next ){
             const { id } = req.params;
-            const ValidaIDPaciente = await Pacientes.findOne({where:{id}});
-            if (!ValidaIDPaciente){
+            const validaIDPaciente = await Pacientes.findOne({where:{id}});
+            if (!validaIDPaciente){
                 return res.status(404).json('ID não encontado!')
             }
             next();
         }
 }
-module.exports = ValidaPaciente;    
+module.exports = validaPaciente;    

@@ -24,13 +24,11 @@ const psicologosController = {
     },
     async atualizarPsicologos (req, res){
         const { id } = req.params;
-        const { nome, apresentacao, email, senha } = req.body;
+        const { senha } = req.body;
         const newSenha = bcrypt.hashSync(senha, 10);
         const psicologoEncontrado = await Psicologos.findOne({where: {id}});
             psicologoEncontrado.update({
-                nome,
-                apresentacao,
-                email,
+                ...req.body,
                 senha:newSenha,            
             });
             return res.status(201).json(psicologoEncontrado);
