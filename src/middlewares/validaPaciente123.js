@@ -25,5 +25,5 @@ const { Pacientes } = require('../models');
             }
             next();
         }
-}
+};
 module.exports = validaPaciente;    

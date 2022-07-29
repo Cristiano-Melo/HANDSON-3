@@ -4,7 +4,7 @@ const { Psicologos } = require('../models');
             const{ email } = req.body;
             const validaEmailPsicologo = await Psicologos.findOne({where:{email:email}});
             if (validaEmailPsicologo?.email == email){ 
-            return res.json('email já cadastrado, favor inserir outro!');//retornar status
+            return res.status(404).json('email já cadastrado, favor inserir outro!');//retornar status
             };
             next();      
         },
@@ -13,7 +13,7 @@ const { Psicologos } = require('../models');
             const { id } = req.params;
             const validaEmailID = await Psicologos.findOne({ where: {email}});
             if ( (validaEmailID?.email == email)&&( validaEmailID.id != id)){
-                return res.json('email já cadastrado, favor inserir outro!');    //retornar status
+                return res.status(404).json('email já cadastrado, favor inserir outro!');    //retornar status
             };
             next();
         },    
